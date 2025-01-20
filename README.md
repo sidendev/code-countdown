@@ -3,10 +3,10 @@
 
 ## Project Breakdown
 
-    'Code Countdown' is a quiz application aimed at fullstack web application developers. With different code languages to choose. 
-    The game has an added twist of having a countdown timer for each question so you have to race against the clock. 
-    As the game progresses the questions will get harder and the time for each question gets shorter. 
-    Can you beat your previous highest score? 
+  'Code Countdown' is a quiz application aimed at fullstack web application developers. With different code languages to choose. 
+  The game has an added twist of having a countdown timer for each question so you have to race against the clock. 
+  As the game progresses the questions will get harder and the time for each question gets shorter. 
+  Can you beat your previous highest score? 
 
 ## Initial planning and design
 
