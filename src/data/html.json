@@ -1,0 +1,89 @@
+{
+    "html": [
+        {
+            "id": 1,
+            "question": "What does HTML stand for?",
+            "options": [
+                "Hyper Text Markup Language",
+                "High Text Markup Language",
+                "Hyper Tabular Markup Language",
+                "Hyperlink Text Markup Language"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 2,
+            "question": "Which HTML element is used to create a hyperlink?",
+            "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 3,
+            "question": "What is the correct syntax for adding an image in HTML?",
+            "options": [
+                "<img src='image.jpg'>",
+                "<image src='image.jpg'>",
+                "<img href='image.jpg'>",
+                "<picture src='image.jpg'>"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 4,
+            "question": "What does the <ul> tag in HTML represent?",
+            "options": [
+                "Unordered List",
+                "Uniform List",
+                "Unique List",
+                "Undefined List"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 5,
+            "question": "Which attribute is used to define inline styles in HTML?",
+            "options": ["class", "style", "id", "inline"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 6,
+            "question": "What is the purpose of the <meta> tag in HTML?",
+            "options": [
+                "To define metadata",
+                "To add images",
+                "To create links",
+                "To display videos"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 7,
+            "question": "Which HTML element is used to define important text?",
+            "options": ["<b>", "<important>", "<strong>", "<i>"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 8,
+            "question": "What is the correct way to create a checkbox in HTML?",
+            "options": [
+                "<checkbox>",
+                "<input type='checkbox'>",
+                "<check>",
+                "<box>"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 9,
+            "question": "Which HTML element is used for the smallest heading?",
+            "options": ["<h1>", "<h6>", "<heading>", "<small>"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 10,
+            "question": "Which attribute specifies the URL of a linked resource in HTML?",
+            "options": ["src", "href", "link", "url"],
+            "correctAnswer": 1
+        }
+    ]
+}
