@@ -1,0 +1,69 @@
+@mixin inter-regular {
+    font-family: 'Inter', serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin inter-medium {
+    font-family: 'Inter', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin inter-semibold {
+    font-family: 'Inter', serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin inter-bold {
+    font-family: 'Inter', serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin inter-extrabold {
+    font-family: 'Inter', serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+@mixin fira-code-light {
+    font-family: 'Fira Code', serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin fira-code-regular {
+    font-family: 'Fira Code', serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin fira-code-medium {
+    font-family: 'Fira Code', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin fira-code-semibold {
+    font-family: 'Fira Code', serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin fira-code-bold {
+    font-family: 'Fira Code', serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
