@@ -1,0 +1,87 @@
+// MAIN COLOURS
+@mixin text-white {
+    color: hsl(0, 0%, 100%);
+}
+
+@mixin text-black {
+    color: hsl(0, 0%, 0%);
+}
+
+@mixin background-white {
+    background-color: hsl(0, 0%, 100%);
+}
+
+@mixin background-black {
+    background-color: hsl(0, 0%, 0%);
+}
+
+@mixin main-background {
+    background-color: hsl(240 10% 3.9%);
+}
+
+@mixin background {
+    background-color: hsl(222.2, 84%, 4.9%);
+}
+
+@mixin foreground {
+    color: hsl(210, 40%, 98%);
+}
+
+@mixin card-background {
+    background-color: hsl(222.2, 84%, 4.9%);
+}
+
+@mixin primary-foreground {
+    color: hsl(222.2, 47.4%, 11.2%);
+}
+
+@mixin secondary-foreground {
+    color: hsl(217.2, 32.6%, 17.5%);
+}
+
+@mixin muted-foreground {
+    color: hsl(215, 20.2%, 65.1%);
+}
+
+// PRIMARY BLUE
+@mixin primary {
+    color: hsl(217.2, 91.2%, 59.8%);
+}
+
+@mixin primary-background {
+    background-color: hsl(217.2, 91.2%, 59.8%);
+}
+
+@mixin primary-hover {
+    background-color: hsl(217.2, 91.2%, 49.8%);
+}
+
+// BORDERS
+@mixin border-bottom {
+    border-bottom: 2px solid hsl(217.2, 32.6%, 17.5%);
+}
+
+@mixin border {
+    border: 2px solid hsl(217.2, 32.6%, 17.5%);
+}
+
+@mixin border-top {
+    border-top: 2px solid hsl(217.2, 32.6%, 17.5%);
+}
+
+// ACCENTS
+@mixin accent-red {
+    color: hsl(0, 91%, 42%);
+}
+
+@mixin accent-red-background {
+    background-color: hsl(0, 91%, 42%);
+}
+
+@mixin accent-green {
+    color: hsl(128, 52%, 56%);
+}
+
+@mixin accent-green-background {
+    background-color: hsl(128, 52%, 56%);
+}

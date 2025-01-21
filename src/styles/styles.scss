@@ -1,4 +1,6 @@
 @use './typography';
+@use './devices';
+@use './palette';
 
 :root {
     line-height: 1.5;
