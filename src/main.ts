@@ -37,6 +37,10 @@ let questions: {
     correctAnswer: number;
 }[] = [];
 
+// function to escape HTML in questions to ensure displayed as a string in dom
+const escapeHTML = (str: string): string =>
+    str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 const loadQuestions = async () => {
     try {
         const response = await fetch('../public/html.json');
@@ -71,14 +75,14 @@ const renderQuestion = (index: number) => {
     const questionData = questions[index];
     app.innerHTML = `
       <div class="question-screen">
-          <h2>${questionData.question}</h2>
+          <h2>${escapeHTML(questionData.question)}</h2>
           <ul>
               ${questionData.options
                   .map(
                       (option, idx) =>
                           `<li>
                               <button class="option-btn" data-index="${idx}">
-                                  ${option}
+                                  ${escapeHTML(option)}
                               </button>
                           </li>`
                   )
