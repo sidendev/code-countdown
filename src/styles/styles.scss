@@ -24,6 +24,16 @@ body {
     min-height: 100vh;
 }
 
+.correct {
+    @include palette.accent-green-background;
+    color: #fff;
+}
+
+.incorrect {
+    @include palette.accent-red-background;
+    color: #fff;
+}
+
 h1 {
     @include typography.inter-extrabold;
 }
