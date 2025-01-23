@@ -37,6 +37,9 @@ let questions: {
     correctAnswer: number;
 }[] = [];
 
+// global timer so that can be reset on new game start
+let timerId: number | null = null;
+
 // function to escape HTML in questions to ensure displayed as a string in dom
 const escapeHTML = (str: string): string =>
     str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -54,8 +57,17 @@ const loadQuestions = async () => {
     }
 };
 
+// function to reset game timer on new game start
+const resetGame = () => {
+    if (timerId !== null) {
+        clearInterval(timerId);
+        timerId = null;
+    }
+};
+
 // sort class start-screen styling
 const renderStartScreen = () => {
+    resetGame();
     app.innerHTML = `
         <div class="start-screen">
             <h2>Welcome to Code Countdown!</h2>
@@ -76,7 +88,6 @@ const renderStartScreen = () => {
 const renderQuestion = (index: number) => {
     const questionData = questions[index];
     let timeRemaining = 10; // Can change time per round here - also need to change the innerHTML below if you do
-    let timerId: number;
     app.innerHTML = `
       <div class="question-screen">
           <h2>${escapeHTML(questionData.question)}</h2>
@@ -105,7 +116,8 @@ const renderQuestion = (index: number) => {
             }
 
             if (timeRemaining <= 0) {
-                clearInterval(timerId);
+                clearInterval(timerId!);
+                timerId = null;
                 handleTimeout(index);
             }
         }, 1000);
@@ -126,7 +138,8 @@ const renderQuestion = (index: number) => {
                 const selectedIndex = parseInt(
                     (e.target as HTMLButtonElement).dataset.index! // need to fix this, using ! for now
                 );
-                clearInterval(timerId);
+                clearInterval(timerId!);
+                timerId = null;
                 checkAnswer(selectedIndex, questionData.correctAnswer, index);
             });
         });
@@ -160,6 +173,7 @@ const checkAnswer = (
 
 // sort class end-screen styling
 const renderEndScreen = () => {
+    resetGame();
     app.innerHTML = `
       <div class="end-screen">
           <h2>Game Over!</h2>
@@ -175,6 +189,7 @@ const renderEndScreen = () => {
 };
 
 const startGame = async () => {
+    resetGame();
     await loadQuestions();
     if (questions.length > 0) {
         renderQuestion(0);
@@ -189,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newGameButton =
         document.querySelector<HTMLButtonElement>('#new-game-btn');
     newGameButton?.addEventListener('click', () => {
+        resetGame();
         renderStartScreen();
     });
 });
