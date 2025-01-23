@@ -185,4 +185,10 @@ const startGame = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderStartScreen();
+
+    const newGameButton =
+        document.querySelector<HTMLButtonElement>('#new-game-btn');
+    newGameButton?.addEventListener('click', () => {
+        renderStartScreen();
+    });
 });
