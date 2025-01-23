@@ -61,14 +61,13 @@ const resetGame = () => {
         clearInterval(timerId);
         timerId = null;
     }
-
-    correctAnswers = 0;
-    incorrectAnswers = 0;
 };
 
 // sort class start-screen styling
 const renderStartScreen = () => {
     resetGame();
+    correctAnswers = 0;
+    incorrectAnswers = 0;
     app.innerHTML = `
         <div class="start-screen">
             <h2>Welcome to Code Countdown!</h2>
@@ -116,6 +115,7 @@ const renderQuestion = (index: number) => {
             }
 
             if (timeRemaining <= 0) {
+                incorrectAnswers++;
                 clearInterval(timerId!); // NEED TO FIX THIS WIP
                 timerId = null;
                 handleTimeout(index);
@@ -124,7 +124,6 @@ const renderQuestion = (index: number) => {
     };
 
     const handleTimeout = (currentIndex: number) => {
-        incorrectAnswers++;
         if (currentIndex + 1 < questions.length) {
             renderQuestion(currentIndex + 1);
         } else {
@@ -156,21 +155,20 @@ const checkAnswer = (
     questionIndex: number
 ) => {
     const buttons = document.querySelectorAll<HTMLButtonElement>('.option-btn');
+
+    if (selectedIndex === correctIndex) {
+        correctAnswers++;
+    } else {
+        incorrectAnswers++;
+    }
+
     buttons.forEach((button, index) => {
         if (index === correctIndex) {
             button.classList.add('correct');
-            correctAnswers++;
         } else if (index === selectedIndex) {
             button.classList.add('incorrect');
-            incorrectAnswers++;
         }
     });
-
-    // if (selectedIndex === correctIndex) {
-    //     correctAnswers++;
-    // } else {
-    //     incorrectAnswers++;
-    // }
 
     // Wait before loading the next question to see correct or not
     setTimeout(() => {
