@@ -16,12 +16,19 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+li {
+    list-style: none;
+}
+
 body {
     margin: 3rem;
     display: flex;
     flex-direction: column;
     min-width: 320px;
     min-height: 100vh;
+    @include palette.main-background;
+    @include palette.foreground;
+    @include typography.inter-regular;
 }
 
 .correct {
@@ -47,6 +54,9 @@ p {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    @include palette.main-background;
+    @include palette.foreground;
+    @include typography.fira-code-regular;
 }
 
 .logo {
@@ -68,6 +78,8 @@ button {
     font-weight: 500;
     font-family: inherit;
     background-color: #1a1a1a;
+    color: #fff;
     cursor: pointer;
     transition: border-color 0.25s;
+    margin: 0.25rem;
 }

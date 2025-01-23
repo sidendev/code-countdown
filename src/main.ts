@@ -43,16 +43,18 @@ const escapeHTML = (str: string): string =>
 
 const loadQuestions = async () => {
     try {
-        const response = await fetch('../public/html.json');
+        const response = await fetch('../html.json');
         const data = await response.json();
         // have to run as data.html to get the questions
         questions = data.html;
         // console.log('data.html: ', data.html);
+        // console.log('questions:', questions[0].question);
     } catch (error) {
         console.error('Error: Failed to load questions:', error);
     }
 };
 
+// sort class start-screen styling
 const renderStartScreen = () => {
     app.innerHTML = `
         <div class="start-screen">
@@ -70,9 +72,11 @@ const renderStartScreen = () => {
 };
 
 // register the index on click for options
-// timer function
+// question-screen and option-btn styling to be sorted
 const renderQuestion = (index: number) => {
     const questionData = questions[index];
+    let timeRemaining = 10; // Can change time per round here - also need to change the innerHTML below if you do
+    let timerId: number;
     app.innerHTML = `
       <div class="question-screen">
           <h2>${escapeHTML(questionData.question)}</h2>
@@ -92,6 +96,29 @@ const renderQuestion = (index: number) => {
       </div>
   `;
 
+    const startTimer = () => {
+        timerId = setInterval(() => {
+            timeRemaining -= 1;
+            const timerDisplay = document.querySelector('#timer span');
+            if (timerDisplay) {
+                timerDisplay.textContent = String(timeRemaining);
+            }
+
+            if (timeRemaining <= 0) {
+                clearInterval(timerId);
+                handleTimeout(index);
+            }
+        }, 1000);
+    };
+
+    const handleTimeout = (currentIndex: number) => {
+        if (currentIndex + 1 < questions.length) {
+            renderQuestion(currentIndex + 1);
+        } else {
+            renderEndScreen();
+        }
+    };
+
     document
         .querySelectorAll<HTMLButtonElement>('.option-btn')
         .forEach((btn) => {
@@ -99,9 +126,12 @@ const renderQuestion = (index: number) => {
                 const selectedIndex = parseInt(
                     (e.target as HTMLButtonElement).dataset.index! // need to fix this, using ! for now
                 );
+                clearInterval(timerId);
                 checkAnswer(selectedIndex, questionData.correctAnswer, index);
             });
         });
+
+    startTimer();
 };
 
 const checkAnswer = (
@@ -110,15 +140,15 @@ const checkAnswer = (
     questionIndex: number
 ) => {
     const buttons = document.querySelectorAll<HTMLButtonElement>('.option-btn');
-    buttons.forEach((button, idx) => {
-        if (idx === correctIndex) {
+    buttons.forEach((button, index) => {
+        if (index === correctIndex) {
             button.classList.add('correct');
-        } else if (idx === selectedIndex) {
+        } else if (index === selectedIndex) {
             button.classList.add('incorrect');
         }
     });
 
-    // Wait before loading the next question
+    // Wait before loading the next question to see correct or not
     setTimeout(() => {
         if (questionIndex + 1 < questions.length) {
             renderQuestion(questionIndex + 1);
@@ -128,6 +158,7 @@ const checkAnswer = (
     }, 1000);
 };
 
+// sort class end-screen styling
 const renderEndScreen = () => {
     app.innerHTML = `
       <div class="end-screen">
