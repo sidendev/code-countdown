@@ -39,6 +39,8 @@ let questions: {
 
 // global timer so that can be reset on new game start
 let timerId: number | null = null;
+let correctAnswers: number = 0;
+let incorrectAnswers: number = 0;
 
 // function to escape HTML in questions to ensure displayed as a string in dom
 const escapeHTML = (str: string): string =>
@@ -48,21 +50,20 @@ const loadQuestions = async () => {
     try {
         const response = await fetch('../html.json');
         const data = await response.json();
-        // have to run as data.html to get the questions
         questions = data.html;
-        // console.log('data.html: ', data.html);
-        // console.log('questions:', questions[0].question);
     } catch (error) {
         console.error('Error: Failed to load questions:', error);
     }
 };
 
-// function to reset game timer on new game start
 const resetGame = () => {
     if (timerId !== null) {
         clearInterval(timerId);
         timerId = null;
     }
+
+    correctAnswers = 0;
+    incorrectAnswers = 0;
 };
 
 // sort class start-screen styling
@@ -83,7 +84,6 @@ const renderStartScreen = () => {
         });
 };
 
-// register the index on click for options
 // question-screen and option-btn styling to be sorted
 const renderQuestion = (index: number) => {
     const questionData = questions[index];
@@ -94,9 +94,9 @@ const renderQuestion = (index: number) => {
           <ul>
               ${questionData.options
                   .map(
-                      (option, idx) =>
+                      (option, index) =>
                           `<li>
-                              <button class="option-btn" data-index="${idx}">
+                              <button class="option-btn" data-index="${index}">
                                   ${escapeHTML(option)}
                               </button>
                           </li>`
@@ -116,7 +116,7 @@ const renderQuestion = (index: number) => {
             }
 
             if (timeRemaining <= 0) {
-                clearInterval(timerId!);
+                clearInterval(timerId!); // NEED TO FIX THIS WIP
                 timerId = null;
                 handleTimeout(index);
             }
@@ -124,6 +124,7 @@ const renderQuestion = (index: number) => {
     };
 
     const handleTimeout = (currentIndex: number) => {
+        incorrectAnswers++;
         if (currentIndex + 1 < questions.length) {
             renderQuestion(currentIndex + 1);
         } else {
@@ -135,11 +136,13 @@ const renderQuestion = (index: number) => {
         .querySelectorAll<HTMLButtonElement>('.option-btn')
         .forEach((btn) => {
             btn.addEventListener('click', (e) => {
-                const selectedIndex = parseInt(
-                    (e.target as HTMLButtonElement).dataset.index! // need to fix this, using ! for now
-                );
-                clearInterval(timerId!);
-                timerId = null;
+                const target = e.target as HTMLButtonElement;
+                const indexValue = target.dataset.index ?? '';
+                const selectedIndex = parseInt(indexValue);
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                }
                 checkAnswer(selectedIndex, questionData.correctAnswer, index);
             });
         });
@@ -156,10 +159,18 @@ const checkAnswer = (
     buttons.forEach((button, index) => {
         if (index === correctIndex) {
             button.classList.add('correct');
+            correctAnswers++;
         } else if (index === selectedIndex) {
             button.classList.add('incorrect');
+            incorrectAnswers++;
         }
     });
+
+    // if (selectedIndex === correctIndex) {
+    //     correctAnswers++;
+    // } else {
+    //     incorrectAnswers++;
+    // }
 
     // Wait before loading the next question to see correct or not
     setTimeout(() => {
@@ -168,15 +179,17 @@ const checkAnswer = (
         } else {
             renderEndScreen();
         }
-    }, 1000);
+    }, 1250);
 };
 
 // sort class end-screen styling
 const renderEndScreen = () => {
     resetGame();
+    const totalQuestions = correctAnswers + incorrectAnswers;
     app.innerHTML = `
       <div class="end-screen">
           <h2>Game Over!</h2>
+          <p>You scored ${correctAnswers}/${totalQuestions}. Well done!</p>
           <button id="restart-btn">Restart</button>
       </div>
   `;
