@@ -27,7 +27,7 @@ import './styles/styles.scss';
 const app = document.querySelector<HTMLDivElement>('#app');
 
 if (!app) {
-    throw new Error('Some elements cannot be found');
+    throw new Error('App element cannot be found');
 }
 
 let questions: {
@@ -41,6 +41,7 @@ let questions: {
 let timerId: number | null = null;
 let correctAnswers: number = 0;
 let incorrectAnswers: number = 0;
+let questionTime: number = 10;
 
 // function to escape HTML in questions to ensure displayed as a string in dom
 const escapeHTML = (str: string): string =>
@@ -52,7 +53,7 @@ const loadQuestions = async () => {
         const data = await response.json();
         questions = data.html;
     } catch (error) {
-        console.error('Error: Failed to load questions:', error);
+        console.log('Error: Failed to load questions:', error);
     }
 };
 
@@ -83,10 +84,42 @@ const renderStartScreen = () => {
         });
 };
 
-// question-screen and option-btn styling to be sorted
+const renderSettingsScreen = () => {
+    app.innerHTML = `
+        <div class="settings-screen">
+            <h2>Settings</h2>
+            <label for="time-select">Question Countdown Timer:</label>
+            <select id="time-select">
+                <option value="10" ${
+                    questionTime === 10 ? 'selected' : ''
+                }>10 seconds</option>
+                <option value="20" ${
+                    questionTime === 20 ? 'selected' : ''
+                }>20 seconds</option>
+                <option value="30" ${
+                    questionTime === 30 ? 'selected' : ''
+                }>30 seconds</option>
+            </select>
+            <button id="save-settings-btn">Save</button>
+        </div>
+    `;
+
+    const saveSettingsButton =
+        document.querySelector<HTMLButtonElement>('#save-settings-btn');
+    const timeSelect =
+        document.querySelector<HTMLSelectElement>('#time-select');
+    saveSettingsButton?.addEventListener('click', () => {
+        if (timeSelect) {
+            questionTime = parseInt(timeSelect.value);
+        }
+        renderStartScreen(); // maybe change this to not auto go to start WIP
+    });
+};
+
 const renderQuestion = (index: number) => {
     const questionData = questions[index];
-    let timeRemaining = 10; // Can change time per round here - also need to change the innerHTML below if you do
+    let timeRemaining = questionTime;
+
     app.innerHTML = `
       <div class="question-screen">
           <h2>${escapeHTML(questionData.question)}</h2>
@@ -102,7 +135,7 @@ const renderQuestion = (index: number) => {
                   )
                   .join('')}
           </ul>
-          <div id="timer">Time Remaining: <span>10</span> seconds</div>
+          <div id="timer">Time Remaining: <span>${timeRemaining}</span> seconds</div>
       </div>
   `;
 
@@ -217,5 +250,12 @@ document.addEventListener('DOMContentLoaded', () => {
     newGameButton?.addEventListener('click', () => {
         resetGame();
         renderStartScreen();
+    });
+
+    const settingsButton =
+        document.querySelector<HTMLButtonElement>('#settings-btn');
+    settingsButton?.addEventListener('click', () => {
+        resetGame();
+        renderSettingsScreen();
     });
 });
