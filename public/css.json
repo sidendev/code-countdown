@@ -1,0 +1,254 @@
+{
+    "css": [
+        {
+            "id": 1,
+            "question": "What does CSS stand for?",
+            "options": [
+                "Cascading Style Sheets",
+                "Colorful Style Sheets",
+                "Computer Style Sheets",
+                "Creative Style Sheets"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 2,
+            "question": "Which HTML head tag is used to define an internal style sheet?",
+            "options": ["<style>", "<script>", "<css>", "<link>"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 3,
+            "question": "Which property is used to change the background color?",
+            "options": ["color", "background-color", "bgcolor", "background"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 4,
+            "question": "How do you select an element with id 'header' in CSS?",
+            "options": ["#header", ".header", "header", "*header"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 5,
+            "question": "Which property is used to change the text color of an element?",
+            "options": ["font-color", "text-color", "color", "text-style"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 6,
+            "question": "What is the correct syntax to link an external style sheet in HTML?",
+            "options": [
+                "<link rel='stylesheet' href='styles.css'>",
+                "<style src='styles.css'>",
+                "<stylesheet>styles.css</stylesheet>",
+                "<css link='styles.css'>"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 7,
+            "question": "Which CSS property controls the text size?",
+            "options": ["font-size", "text-size", "font-style", "text-style"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 8,
+            "question": "How do you make each word in a text start with a capital letter?",
+            "options": [
+                "text-transform: capitalize;",
+                "text-style: capitalize;",
+                "font-variant: small-caps;",
+                "font-transform: capitalize;"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 9,
+            "question": "Which property is used to change the font of an element?",
+            "options": [
+                "font-family",
+                "font-style",
+                "font-weight",
+                "font-variant"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 10,
+            "question": "How do you select all <p> elements inside a <div> element?",
+            "options": ["div p", "div + p", "div > p", "p > div"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 11,
+            "question": "Which property is used to add space between the content and the border of an element?",
+            "options": ["margin", "padding", "border-spacing", "spacing"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 12,
+            "question": "Which flexbox property is used to define a flex container?",
+            "options": ["display", "flex", "align-items", "justify-content"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 13,
+            "question": "What is the default flexbox value of the flex-direction property?",
+            "options": ["row", "column", "row-reverse", "column-reverse"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 14,
+            "question": "Which property is used to change the left margin of an element?",
+            "options": ["margin-left", "padding-left", "left-margin", "margin"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 15,
+            "question": "How do you make the text bold in CSS?",
+            "options": [
+                "font-weight: bold;",
+                "font-style: bold;",
+                "text-weight: bold;",
+                "text-style: bold;"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 16,
+            "question": "Which property is used to change the spacing between letters?",
+            "options": [
+                "letter-spacing",
+                "text-spacing",
+                "font-spacing",
+                "character-spacing"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 17,
+            "question": "How do you select elements with class name 'intro'?",
+            "options": [".intro", "#intro", "intro", "*intro"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 18,
+            "question": "Which property is used to set the width of an element?",
+            "options": ["width", "size", "size", "length"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 19,
+            "question": "What is the default value of the position property?",
+            "options": ["static", "relative", "absolute", "fixed"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 20,
+            "question": "Which property is used to float elements in CSS?",
+            "options": ["float", "position", "align", "display"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 21,
+            "question": "How do you apply a style to multiple selectors?",
+            "options": [
+                "Separate each selector with a comma",
+                "Separate each selector with a space",
+                "Separate each selector with a plus sign",
+                "Separate each selector with a tilde"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 22,
+            "question": "Which property is used to change the style of the list marker?",
+            "options": [
+                "list-style-type",
+                "list-type",
+                "marker-style",
+                "list-marker"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 23,
+            "question": "How could you make an image size responsive in CSS?",
+            "options": [
+                "Set the max-width property to 100%",
+                "Set the width property to auto",
+                "Set the height property to auto",
+                "Set the block property to 100%"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 24,
+            "question": "Which property is used to change the cursor icon when hovering over an element?",
+            "options": ["cursor", "pointer", "hover", "mouse-pointer"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 25,
+            "question": "What is the purpose of the z-index property in CSS?",
+            "options": [
+                "To control the stack order of elements",
+                "To set the zoom level of an element",
+                "To define the horizontal position of an element",
+                "To specify the opacity of an element"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 26,
+            "question": "What does the flexbox justify-content property control in a flex container?",
+            "options": [
+                "Horizontal alignment of flex items",
+                "Vertical alignment of flex items",
+                "Spacing between flex lines",
+                "Order of flex items"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 27,
+            "question": "Which flexbox property is used to align flex items along the cross axis?",
+            "options": [
+                "align-items",
+                "justify-content",
+                "align-content",
+                "flex-align"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 28,
+            "question": "How do you create a CSS rule that applies to all <div> elements and only those inside <section>?",
+            "options": [
+                "section div",
+                "section + div",
+                "section > div",
+                "section ~ div"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 29,
+            "question": "Which shorthand property is used to set all four margins in CSS?",
+            "options": ["margin", "padding", "border", "spacing"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 30,
+            "question": "What is the purpose of the transition property in CSS?",
+            "options": [
+                "To create a smooth animation effect when a property changes",
+                "To change the visibility of an element",
+                "To set the order of elements in a layout",
+                "To define the position of an element"
+            ],
+            "correctAnswer": 0
+        }
+    ]
+}
