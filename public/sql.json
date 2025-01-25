@@ -1,0 +1,279 @@
+{
+    "sql": [
+        {
+            "id": 1,
+            "question": "What does SQL stand for?",
+            "options": [
+                "Simple Query Language",
+                "Structured Query Language",
+                "Structured Question Language",
+                "Sequential Query Language"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 2,
+            "question": "Which SQL statement is used to retrieve data from a database?",
+            "options": ["GET", "FETCH", "SELECT", "RETRIEVE"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 3,
+            "question": "How do you select all columns from a table named 'Employees'?",
+            "options": [
+                "FETCH * FROM Employees;",
+                "SELECT ALL FROM Employees;",
+                "SELECT * FROM Employees;",
+                "GET * FROM Employees;"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 4,
+            "question": "Which clause is used to filter records in a SELECT statement?",
+            "options": ["FILTER", "WHERE", "HAVING", "ORDER BY"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 5,
+            "question": "What is the purpose of the ORDER BY clause in SQL?",
+            "options": [
+                "To filter records",
+                "To group records",
+                "To sort the result set",
+                "To join tables"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 6,
+            "question": "Which SQL statement is used to insert new data into a table?",
+            "options": ["INSERT INTO", "ADD NEW", "CREATE", "UPDATE"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 7,
+            "question": "How do you update the 'Salary' field to 5000 in the 'Employees' table for employees with an 'ID' of 3?",
+            "options": [
+                "MODIFY Employees SET Salary = 5000 WHERE ID = 3;",
+                "UPDATE Employees SET Salary = 5000 WHERE ID = 3;",
+                "SET Salary = 5000 IN Employees WHERE ID = 3;",
+                "CHANGE Employees SET Salary = 5000 WHERE ID = 3;"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 8,
+            "question": "Which SQL statement is used to remove a table from a database?",
+            "options": [
+                "DELETE TABLE table_name;",
+                "REMOVE TABLE table_name;",
+                "DROP TABLE table_name;",
+                "ERASE TABLE table_name;"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 9,
+            "question": "What does the COUNT() function do in SQL?",
+            "options": [
+                "Counts the number of rows",
+                "Calculates the sum of a column",
+                "Counts the number of columns",
+                "Calculates the average value of a column"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 10,
+            "question": "Which SQL clause is used to group rows that have the same values?",
+            "options": ["ORDER BY", "CLUSTER BY", "GROUP BY", "PARTITION BY"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 11,
+            "question": "How do you select unique values from a column named 'Department' in the 'Employees' table?",
+            "options": [
+                "SELECT ONLY Department FROM Employees;",
+                "SELECT DIFFERENT Department FROM Employees;",
+                "SELECT UNIQUE Department FROM Employees;",
+                "SELECT DISTINCT Department FROM Employees;"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 12,
+            "question": "Which operator is used to search for a specified pattern in a column?",
+            "options": ["MATCH", "LIKE", "PATTERN", "SEARCH"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 13,
+            "question": "What is the purpose of the JOIN clause in SQL?",
+            "options": [
+                "To combine rows from two or more tables",
+                "To group records",
+                "To sort the result set",
+                "To filter records"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 14,
+            "question": "Which SQL statement is used to create a new table?",
+            "options": [
+                "MAKE TABLE table_name (...);",
+                "ADD TABLE table_name (...);",
+                "CREATE TABLE table_name (...);",
+                "NEW TABLE table_name (...);"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 15,
+            "question": "How do you delete all records from a table named 'Orders' without removing the table itself?",
+            "options": [
+                "DROP Orders;",
+                "REMOVE Orders;",
+                "DELETE FROM Orders;",
+                "ERASE Orders;"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 16,
+            "question": "Which SQL function is used to return the largest value from a column?",
+            "options": ["MAX()", "LARGE()", "GREATEST()", "HIGHEST()"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 17,
+            "question": "What is a primary key in SQL?",
+            "options": [
+                "A key that allows null values",
+                "A key used to encrypt data",
+                "A unique identifier for each record in a table",
+                "A field that can have duplicate values"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 18,
+            "question": "Which SQL statement is used to remove a record from a table?",
+            "options": [
+                "REMOVE FROM table_name WHERE condition;",
+                "DROP FROM table_name WHERE condition;",
+                "ERASE FROM table_name WHERE condition;",
+                "DELETE FROM table_name WHERE condition;"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 19,
+            "question": "Which SQL keyword is used to sort the result set in ascending or descending order?",
+            "options": ["SORT BY", "GROUP BY", "ARRANGE BY", "ORDER BY"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 20,
+            "question": "What does the SELECT statement do?",
+            "options": [
+                "Retrieves data from a table",
+                "Deletes data from a table",
+                "Updates data in a table",
+                "Creates a new table"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 21,
+            "question": "Which SQL keyword is used to prevent duplicate rows in the results?",
+            "options": ["FILTER", "UNIQUE", "LIMIT", "DISTINCT"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 22,
+            "question": "What does the WHERE clause do?",
+            "options": [
+                "Filters rows based on a condition",
+                "Joins tables",
+                "Sorts rows",
+                "Groups rows"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 23,
+            "question": "How do you limit the number of rows returned in a query?",
+            "options": [
+                "Using TOP",
+                "Using ROWS",
+                "Using FETCH",
+                "Using LIMIT"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 24,
+            "question": "Which operator is used to combine conditions in SQL?",
+            "options": ["OR", "IN", "NOT", "AND"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 25,
+            "question": "What does the AVG() function do?",
+            "options": [
+                "Counts the rows",
+                "Finds the maximum value",
+                "Calculates the average value",
+                "Calculates the total"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 26,
+            "question": "What is the purpose of the LIKE operator?",
+            "options": [
+                "Matches a pattern in a column",
+                "Groups rows with the same value",
+                "Filters numeric values",
+                "Sorts rows in descending order"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 27,
+            "question": "Which SQL keyword is used to join two tables?",
+            "options": ["MERGE", "LINK", "JOIN", "COMBINE"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 28,
+            "question": "What is a foreign key?",
+            "options": [
+                "A unique field in the table",
+                "A primary key of the table",
+                "A key used to encrypt data",
+                "A field that links to another table"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 29,
+            "question": "What is the default sorting order in SQL?",
+            "options": ["Descending", "Numerical", "Alphabetical", "Ascending"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 30,
+            "question": "What does the NULL value represent in SQL?",
+            "options": [
+                "An empty string",
+                "An unknown or missing value",
+                "A zero value",
+                "A default value"
+            ],
+            "correctAnswer": 1
+        }
+    ]
+}

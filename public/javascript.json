@@ -1,0 +1,249 @@
+{
+    "javascript": [
+        {
+            "id": 1,
+            "question": "What is the correct syntax for logging something to the console in JavaScript?",
+            "options": [
+                "console.log('message');",
+                "log.console('message');",
+                "print('message');",
+                "log('message');"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 2,
+            "question": "Which operator is used to assign a value to a variable?",
+            "options": ["=", "==", "===", "=>"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 3,
+            "question": "Which of the following is not JavaScript data types?",
+            "options": [
+                "Null type",
+                "Undefined type",
+                "Number type",
+                "All of these"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 4,
+            "question": "Which object is the main entry point to all client-side JavaScript features and APIs?",
+            "options": ["Position", "Window", "Standard", "Location"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 5,
+            "question": "Which of these is a valid way to define a function in JavaScript?",
+            "options": [
+                "function myFunction() {}",
+                "let myFunction = function() {}",
+                "const myFunction = () => {}",
+                "All of these"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 6,
+            "question": "How do you write an if statement in JavaScript?",
+            "options": [
+                "if x > y then {}",
+                "if (x > y) {}",
+                "if x > y {}",
+                "if {x > y}"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 7,
+            "question": "What is the correct way to write a JavaScript array?",
+            "options": [
+                "let arr = (1, 2, 3);",
+                "let arr = {1, 2, 3};",
+                "let arr = [1, 2, 3];",
+                "let arr = '1, 2, 3';"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 8,
+            "question": "Which built-in method returns the length of the string?",
+            "options": ["length()", "size()", "index()", "None of these."],
+            "correctAnswer": 0
+        },
+        {
+            "id": 9,
+            "question": "Which function of the Number object returns a string value version of the current number?",
+            "options": [
+                "toString()",
+                "toFixed()",
+                "toLocaleString()",
+                "toPrecision()"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 10,
+            "question": "Which function of the String object returns the calling string value converted to lower case?",
+            "options": [
+                "toLocaleLowerCase()",
+                "toLowerCase()",
+                "toString()",
+                "substring()"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 11,
+            "question": "Which function of the Array object removes the last element from an array and returns that element?",
+            "options": ["pop()", "push()", "join()", "map()"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 12,
+            "question": "Which function of the Array object adds one or more elements to the end of an array and returns the new length of the array?",
+            "options": ["pop()", "push()", "join()", "map()"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 13,
+            "question": "Which function of the Array object calls a function for each element in the array?",
+            "options": ["concat()", "every()", "filter()", "forEach()"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 14,
+            "question": "Which function of the Array object returns true if at least one element in the array satisfies the provided testing function?",
+            "options": ["reverse()", "some()", "shift()", "slice()"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 15,
+            "question": "Which function of the Array object extracts a section of an array and returns a new array?",
+            "options": ["reverse()", "some()", "shift()", "slice()"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 16,
+            "question": "Which function of the Array object adds and/or removes elements from an array?",
+            "options": ["toSource()", "sort()", "splice()", "unshift()"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 17,
+            "question": "Which function of the String object returns the characters in a string between two indexes of the string?",
+            "options": ["slice()", "split()", "substr()", "substring()"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 18,
+            "question": "Which function of the String object creates a string to be displayed as bold as if it were in a <b> tag?",
+            "options": ["anchor()", "big()", "blink()", "bold()"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 19,
+            "question": "Which function of the String object returns the calling string value converted to upper case?",
+            "options": [
+                "toUpperCap()",
+                "toUpperCase()",
+                "toString()",
+                "substring()"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 20,
+            "question": "Which function of the String object returns the index of the first occurrence of the specified substring?",
+            "options": ["substr()", "search()", "lastIndexOf()", "indexOf()"],
+            "correctAnswer": 3
+        },
+        {
+            "id": 21,
+            "question": "What is the result of this code: console.log(2 + '2');?",
+            "options": ["'22'", "4", "undefined", "NaN"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 22,
+            "question": "How do you check if two values are equal in both value and type in JavaScript?",
+            "options": ["==", "===", "=", "!"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 23,
+            "question": "What will the following code output: console.log(0.1 + 0.2 === 0.3)?",
+            "options": ["true", "false", "undefined", "NaN"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 24,
+            "question": "Which method is used to parse a JSON string into a JavaScript object?",
+            "options": [
+                "JSON.parse()",
+                "JSON.stringify()",
+                "JSON.objectify()",
+                "JSON.toObject()"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 25,
+            "question": "What does the 'async' keyword in JavaScript signify?",
+            "options": [
+                "The function will execute synchronously",
+                "The function will always return a Promise",
+                "The function will wait for other asynchronous operations to complete",
+                "The function will execute immediately"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 26,
+            "question": "Which statement is used to handle exceptions in JavaScript?",
+            "options": [
+                "try-catch",
+                "if-else",
+                "throw-catch",
+                "error-handling"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 27,
+            "question": "Which built-in function can be used to convert a string to an integer in JavaScript?",
+            "options": ["parseInt()", "toInteger()", "toString()", "Number()"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 28,
+            "question": "What will the following code output: console.log(typeof null)?",
+            "options": ["'null'", "'object'", "'undefined'", "'NaN'"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 29,
+            "question": "What does the 'await' keyword do in JavaScript?",
+            "options": [
+                "Pauses the execution of a function until a Promise is resolved",
+                "Creates a new Promise",
+                "Waits for a set timeout to complete",
+                "Runs a function asynchronously"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 30,
+            "question": "What is the purpose of using the 'try' keyword in JavaScript?",
+            "options": [
+                "To handle errors during execution",
+                "To test if a variable exists",
+                "To declare variables",
+                "To retry a failed function"
+            ],
+            "correctAnswer": 0
+        }
+    ]
+}

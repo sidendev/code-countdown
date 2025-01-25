@@ -1,0 +1,289 @@
+{
+    "typescript": [
+        {
+            "id": 1,
+            "question": "What is TypeScript?",
+            "options": [
+                "A dynamically typed language",
+                "A styling language for web pages",
+                "A database query language",
+                "A statically typed superset of JavaScript"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 2,
+            "question": "Which extension is used for TypeScript files?",
+            "options": [".ts", ".js", ".jsx", ".tss"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 3,
+            "question": "How do you declare a variable in TypeScript?",
+            "options": [
+                "var variableName = value;",
+                "let variableName: type;",
+                "const variableName;",
+                "variableName: type = value;"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 4,
+            "question": "Which of the following is a primitive data type in TypeScript?",
+            "options": ["array", "number", "object", "enum"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 5,
+            "question": "What is the 'any' type used for in TypeScript?",
+            "options": [
+                "To restrict a variable to a specific type",
+                "To define a function that returns none",
+                "To create a constant variable",
+                "To allow a variable to hold any type of value"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 6,
+            "question": "How do you define an array of numbers in TypeScript?",
+            "options": [
+                "let numbers: number[];",
+                "let numbers: Array;",
+                "let numbers: [number];",
+                "let numbers: number;"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 7,
+            "question": "What is an interface in TypeScript?",
+            "options": [
+                "A function that returns a value",
+                "A way to define the structure of an object",
+                "A method to handle exceptions",
+                "A loop structure"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 8,
+            "question": "How do you implement inheritance in TypeScript?",
+            "options": [
+                "Using the 'implements' keyword",
+                "Using the 'inherits' keyword",
+                "Using the 'super' keyword",
+                "Using the 'extends' keyword"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 9,
+            "question": "What is the purpose of the 'readonly' modifier in TypeScript?",
+            "options": [
+                "To define a constant variable",
+                "To create a private property",
+                "To make a property immutable",
+                "To declare a variable without initializing it"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 10,
+            "question": "What keyword is used to define a constant in TypeScript?",
+            "options": ["const", "let", "var", "final"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 11,
+            "question": "What is the 'never' type used for in TypeScript?",
+            "options": [
+                "To define a nullable variable",
+                "To indicate a deprecated function",
+                "To specify an optional parameter",
+                "To represent a value that never occurs"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 12,
+            "question": "How do you specify optional properties in an interface?",
+            "options": [
+                "By adding a '!' after the property name",
+                "By adding a '?' after the property name",
+                "By using the 'optional' keyword",
+                "By using the 'nullable' keyword"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 13,
+            "question": "What is the purpose of the 'as' keyword in TypeScript?",
+            "options": [
+                "To import modules",
+                "To export functions",
+                "To perform type assertions",
+                "To declare variables"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 14,
+            "question": "Which of the following is a correct way to define a function in TypeScript?",
+            "options": [
+                "function greet(name: string): string { return 'Hello, ' + name; }",
+                "function greet(name): string { return 'Hello, ' + name; }",
+                "function greet(name: string) { return 'Hello, ' + name; }",
+                "function greet(name): { return 'Hello, ' + name; }"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 15,
+            "question": "What is the 'unknown' type in TypeScript?",
+            "options": [
+                "A type that represents undefined values",
+                "A type that represents null values",
+                "A type used for variables with unknown names",
+                "A type-safe counterpart of 'any'"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 16,
+            "question": "What is the default access modifier for class members in TypeScript?",
+            "options": ["public", "private", "protected", "readonly"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 17,
+            "question": "What is the purpose of the 'abstract' keyword in TypeScript?",
+            "options": [
+                "To define a method that cannot be overridden",
+                "To define a class that cannot be instantiated",
+                "To declare a variable without initializing it",
+                "To create a constant variable"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 18,
+            "question": "What symbol is used to indicate an optional property in TypeScript?",
+            "options": ["?", "!", ":", "*"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 19,
+            "question": "Which TypeScript configuration file is used to specify compiler options?",
+            "options": [
+                "typescript.json",
+                "config.ts",
+                "tsconfig.json",
+                "tscompile.json"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 20,
+            "question": "How do you explicitly set a variable as null in TypeScript?",
+            "options": [
+                "let value: string = null;",
+                "let value = undefined;",
+                "let value: any = null;",
+                "let value: null = null;"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 21,
+            "question": "What does the 'implements' keyword do in TypeScript?",
+            "options": [
+                "Ensures a class conforms to an interface",
+                "Extends functionality of another class",
+                "Checks for type safety at runtime",
+                "Declares private properties"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 22,
+            "question": "Which keyword is used to create an interface in TypeScript?",
+            "options": ["class", "interface", "type", "object"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 23,
+            "question": "What is the purpose of 'namespace' in TypeScript?",
+            "options": [
+                "To implement inheritance",
+                "To define constant values",
+                "To organise code and avoid name collisions",
+                "To create private variables"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": 24,
+            "question": "How do you create a union type in TypeScript?",
+            "options": ["Using '|'", "Using '&'", "Using 'or'", "Using '/'"],
+            "correctAnswer": 0
+        },
+        {
+            "id": 25,
+            "question": "What does 'readonly' do in TypeScript?",
+            "options": [
+                "Makes a variable optional",
+                "Declares a constant",
+                "Creates a private variable",
+                "Prevents modification of a property"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": 26,
+            "question": "What is the use of the 'keyof' operator in TypeScript?",
+            "options": [
+                "To define a function's parameters",
+                "To extract the keys of a type as a union",
+                "To merge two types",
+                "To create a private property"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": 27,
+            "question": "What is the purpose of 'Partial' in TypeScript?",
+            "options": [
+                "To make all properties of a type optional",
+                "To make all properties of a type readonly",
+                "To convert all methods of a class into async methods",
+                "To remove all null values from a type"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": 28,
+            "question": "Which keyword is used to export a module in TypeScript?",
+            "options": ["module", "export", "require", "return"],
+            "correctAnswer": 1
+        },
+        {
+            "id": 29,
+            "question": "How do you cast a variable to a specific type in TypeScript?",
+            "options": ["Using ':'", "Using 'is'", "Using 'as'", "Using '='"],
+            "correctAnswer": 2
+        },
+        {
+            "id": 30,
+            "question": "What does 'typeof' do in TypeScript?",
+            "options": [
+                "Gets the type of a variable at compile time",
+                "Creates a new object type",
+                "Checks if a variable is undefined",
+                "Performs runtime type checking"
+            ],
+            "correctAnswer": 0
+        }
+    ]
+}
