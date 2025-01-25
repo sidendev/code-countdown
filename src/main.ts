@@ -24,34 +24,53 @@ import './styles/styles.scss';
 
 // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
+// Question interface to stop getting TS error warnings
+interface Question {
+    id: number;
+    question: string;
+    options: string[];
+    correctAnswer: number;
+}
+
 const app = document.querySelector<HTMLDivElement>('#app');
 
 if (!app) {
     throw new Error('App element cannot be found');
 }
 
-let questions: {
-    id: number;
-    question: string;
-    options: string[];
-    correctAnswer: number;
-}[] = [];
-
-// global timer so that can be reset on new game start
+let questions: Question[] = [];
 let timerId: number | null = null;
 let correctAnswers: number = 0;
 let incorrectAnswers: number = 0;
 let questionTime: number = 10;
+let selectedLanguage: string = '';
 
 // function to escape HTML in questions to ensure displayed as a string in dom
 const escapeHTML = (str: string): string =>
     str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-const loadQuestions = async () => {
+// WIP
+const pickRandomQuestions = (arr: Question[], count: number): Question[] => {
+    const selectedQuestions: Question[] = [];
+    const usedQuestions: number[] = [];
+
+    while (selectedQuestions.length < count) {
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        if (!usedQuestions.includes(randomIndex)) {
+            usedQuestions.push(randomIndex);
+            selectedQuestions.push(arr[randomIndex]);
+        }
+    }
+
+    return selectedQuestions;
+};
+
+const loadQuestions = async (language: string) => {
     try {
-        const response = await fetch('../html.json');
+        const response = await fetch(`../${language}.json`);
         const data = await response.json();
-        questions = data.html;
+        questions = data[language] as Question[];
+        questions = pickRandomQuestions(questions, 10); // If want to change number of questions need to update here
     } catch (error) {
         console.log('Error: Failed to load questions:', error);
     }
@@ -69,17 +88,53 @@ const renderStartScreen = () => {
     resetGame();
     correctAnswers = 0;
     incorrectAnswers = 0;
+
     app.innerHTML = `
         <div class="start-screen">
             <h2>Welcome to Code Countdown!</h2>
             <p>Test your coding knowledge and race against the clock.</p>
-            <button id="start-btn">Start Game</button>
+            <div class="language-buttons">
+                <button id="html-btn">HTML</button>
+                <button id="css-btn">CSS</button>
+                <button id="js-btn">JavaScript</button>
+                <button id="ts-btn">TypeScript</button>
+                <button id="sql-btn">SQL</button>
+            </div>
         </div>
     `;
 
     document
-        .querySelector<HTMLButtonElement>('#start-btn')
+        .querySelector<HTMLButtonElement>('#html-btn')
         ?.addEventListener('click', () => {
+            selectedLanguage = 'html';
+            startGame();
+        });
+
+    document
+        .querySelector<HTMLButtonElement>('#css-btn')
+        ?.addEventListener('click', () => {
+            selectedLanguage = 'css';
+            startGame();
+        });
+
+    document
+        .querySelector<HTMLButtonElement>('#js-btn')
+        ?.addEventListener('click', () => {
+            selectedLanguage = 'javascript';
+            startGame();
+        });
+
+    document
+        .querySelector<HTMLButtonElement>('#ts-btn')
+        ?.addEventListener('click', () => {
+            selectedLanguage = 'typescript';
+            startGame();
+        });
+
+    document
+        .querySelector<HTMLButtonElement>('#sql-btn')
+        ?.addEventListener('click', () => {
+            selectedLanguage = 'sql';
             startGame();
         });
 };
@@ -234,7 +289,7 @@ const renderEndScreen = () => {
 
 const startGame = async () => {
     resetGame();
-    await loadQuestions();
+    await loadQuestions(selectedLanguage);
     if (questions.length > 0) {
         renderQuestion(0);
     } else {
