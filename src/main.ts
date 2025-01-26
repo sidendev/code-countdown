@@ -42,7 +42,8 @@ let questions: Question[] = [];
 let timerId: number | null = null;
 let correctAnswers: number = 0;
 let incorrectAnswers: number = 0;
-let questionTime: number = 10;
+let questionTime: number = 10; // default time for questions
+let questionsPerGame: number = 10; // default number of questions per game
 let selectedLanguage: string = '';
 
 // function to escape HTML in questions to ensure displayed as a string in dom
@@ -70,7 +71,7 @@ const loadQuestions = async (language: string) => {
         const response = await fetch(`../${language}.json`);
         const data = await response.json();
         questions = data[language] as Question[];
-        questions = pickRandomQuestions(questions, 10); // If want to change number of questions need to update here
+        questions = pickRandomQuestions(questions, questionsPerGame);
     } catch (error) {
         console.log('Error: Failed to load questions:', error);
     }
@@ -155,6 +156,24 @@ const renderSettingsScreen = () => {
                     questionTime === 30 ? 'selected' : ''
                 }>30 seconds</option>
             </select>
+            
+            <br/><br/>
+            
+            <label for="count-select">Number of Questions Per Game:</label>
+            <select id="count-select">
+                <option value="10" ${
+                    questionsPerGame === 10 ? 'selected' : ''
+                }>10 questions</option>
+                <option value="20" ${
+                    questionsPerGame === 20 ? 'selected' : ''
+                }>20 questions</option>
+                <option value="30" ${
+                    questionsPerGame === 30 ? 'selected' : ''
+                }>30 questions</option>
+            </select>
+
+            <br/><br/>
+
             <button id="save-settings-btn">Save</button>
         </div>
     `;
@@ -163,10 +182,17 @@ const renderSettingsScreen = () => {
         document.querySelector<HTMLButtonElement>('#save-settings-btn');
     const timeSelect =
         document.querySelector<HTMLSelectElement>('#time-select');
+    const countSelect =
+        document.querySelector<HTMLSelectElement>('#count-select');
+
     saveSettingsButton?.addEventListener('click', () => {
         if (timeSelect) {
             questionTime = parseInt(timeSelect.value);
         }
+        if (countSelect) {
+            questionsPerGame = parseInt(countSelect.value);
+        }
+
         renderStartScreen(); // maybe change this to not auto go to start WIP
     });
 };
