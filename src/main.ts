@@ -220,6 +220,24 @@ const renderQuestion = (index: number) => {
       </div>
   `;
 
+    // WORK IN PROGRESS: NEED TO FIX THIS
+    //   app.innerHTML = `
+    //   <div class="question__container">
+    //       <h2 class="question__text">${escapeHTML(questionData.question)}</h2>
+    //       <div class="question__options">
+    //           ${questionData.options
+    //               .map(
+    //                   (option, index) =>
+    //                       `<button class="question__option" data-index="${index}">
+    //                           ${escapeHTML(option)}
+    //                        </button>`
+    //               )
+    //               .join('')}
+    //       </div>
+    //       <div class="question__timer" id="timer">Time Remaining: <span>${timeRemaining}</span> seconds</div>
+    //   </div>
+    // `;
+
     const startTimer = () => {
         timerId = setInterval(() => {
             timeRemaining -= 1;
@@ -323,6 +341,7 @@ const startGame = async () => {
     }
 };
 
+// using bootstrap classes for styling on this screen
 const renderAboutScreen = () => {
     resetGame();
     app.innerHTML = `
@@ -337,11 +356,11 @@ const renderAboutScreen = () => {
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                             Can I change how many questions I have per game?
                         </button>
                     </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
                             Yes, You can adjust the number of questions per game in the Settings menu.
                         </div>

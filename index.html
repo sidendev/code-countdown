@@ -19,22 +19,26 @@
         />
     </head>
     <body>
-        <header>
-            <div class="container">
-                <h1>Code Countdown</h1>
-                <nav>
-                    <button id="settings-btn">Settings</button>
-                    <button id="about-btn">About</button>
-                    <button id="new-game-btn">New Game</button>
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__logo">Code Countdown</h1>
+                <nav class="header__nav">
+                    <button class="header__btn" id="settings-btn">
+                        Settings
+                    </button>
+                    <button class="header__btn" id="about-btn">About</button>
+                    <button class="header__btn" id="new-game-btn">
+                        New Game
+                    </button>
                 </nav>
             </div>
         </header>
-        <main>
-            <div id="app"></div>
+        <main class="main">
+            <div class="main__container" id="app"></div>
         </main>
-        <footer>
-            <div class="container">
-                <p>&copy; 2025 Code Countdown</p>
+        <footer class="footer">
+            <div class="footer__container">
+                <p class="footer__text">&copy; 2025 Code Countdown</p>
             </div>
         </footer>
         <script
