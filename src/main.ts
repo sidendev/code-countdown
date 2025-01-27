@@ -202,14 +202,14 @@ const renderQuestion = (index: number) => {
     let timeRemaining = questionTime;
 
     app.innerHTML = `
-      <div class="question-screen">
-          <h2>${escapeHTML(questionData.question)}</h2>
-          <ul>
+      <div class="question__container">
+          <h2 class="question__text">${escapeHTML(questionData.question)}</h2>
+          <ul class="question__options">
               ${questionData.options
                   .map(
                       (option, index) =>
                           `<li>
-                              <button class="option-btn" data-index="${index}">
+                              <button class="question_option" data-index="${index}">
                                   ${escapeHTML(option)}
                               </button>
                           </li>`
@@ -219,24 +219,6 @@ const renderQuestion = (index: number) => {
           <div id="timer">Time Remaining: <span>${timeRemaining}</span> seconds</div>
       </div>
   `;
-
-    // WORK IN PROGRESS: NEED TO FIX THIS
-    //   app.innerHTML = `
-    //   <div class="question__container">
-    //       <h2 class="question__text">${escapeHTML(questionData.question)}</h2>
-    //       <div class="question__options">
-    //           ${questionData.options
-    //               .map(
-    //                   (option, index) =>
-    //                       `<button class="question__option" data-index="${index}">
-    //                           ${escapeHTML(option)}
-    //                        </button>`
-    //               )
-    //               .join('')}
-    //       </div>
-    //       <div class="question__timer" id="timer">Time Remaining: <span>${timeRemaining}</span> seconds</div>
-    //   </div>
-    // `;
 
     const startTimer = () => {
         timerId = setInterval(() => {
@@ -264,7 +246,7 @@ const renderQuestion = (index: number) => {
     };
 
     document
-        .querySelectorAll<HTMLButtonElement>('.option-btn')
+        .querySelectorAll<HTMLButtonElement>('.question_option')
         .forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 const target = e.target as HTMLButtonElement;
@@ -286,7 +268,8 @@ const checkAnswer = (
     correctIndex: number,
     questionIndex: number
 ) => {
-    const buttons = document.querySelectorAll<HTMLButtonElement>('.option-btn');
+    const buttons =
+        document.querySelectorAll<HTMLButtonElement>('.question_option');
 
     if (selectedIndex === correctIndex) {
         correctAnswers++;
@@ -318,7 +301,7 @@ const renderEndScreen = () => {
     const totalQuestions = correctAnswers + incorrectAnswers;
     app.innerHTML = `
       <div class="end-screen">
-          <h2>Game Over!</h2>
+          <h2>Game Over</h2>
           <p>You scored ${correctAnswers}/${totalQuestions}. Well done!</p>
           <button id="restart-btn">Restart</button>
       </div>
@@ -408,23 +391,30 @@ const renderAboutScreen = () => {
 document.addEventListener('DOMContentLoaded', () => {
     renderStartScreen();
 
-    const newGameButton =
-        document.querySelector<HTMLButtonElement>('#new-game-btn');
-    newGameButton?.addEventListener('click', () => {
-        resetGame();
-        renderStartScreen();
+    const newGameButtons =
+        document.querySelectorAll<HTMLButtonElement>('#new-game-btn');
+    newGameButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            resetGame();
+            renderStartScreen();
+        });
     });
 
-    const settingsButton =
-        document.querySelector<HTMLButtonElement>('#settings-btn');
-    settingsButton?.addEventListener('click', () => {
-        resetGame();
-        renderSettingsScreen();
+    const settingsButtons =
+        document.querySelectorAll<HTMLButtonElement>('#settings-btn');
+    settingsButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            resetGame();
+            renderSettingsScreen();
+        });
     });
 
-    const aboutButton = document.querySelector<HTMLButtonElement>('#about-btn');
-    aboutButton?.addEventListener('click', () => {
-        resetGame();
-        renderAboutScreen();
+    const aboutButtons =
+        document.querySelectorAll<HTMLButtonElement>('#about-btn');
+    aboutButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            resetGame();
+            renderAboutScreen();
+        });
     });
 });

@@ -22,7 +22,54 @@
         <header class="header">
             <div class="header__container">
                 <h1 class="header__logo">Code Countdown</h1>
-                <nav class="header__nav">
+
+                <!-- bootstrap offcanvas btn -->
+                <button
+                    class="navbar-toggler header__offcanvas-toggler navbar-dark bg-dark"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- bootstrap offcanvas nav menu -->
+                <div
+                    class="offcanvas offcanvas-end text-bg-dark"
+                    tabindex="-1"
+                    id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel"
+                >
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            Menu
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <nav class="header__nav header__nav--offcanvas">
+                            <button class="header__btn" id="settings-btn">
+                                Settings
+                            </button>
+                            <button class="header__btn" id="about-btn">
+                                About
+                            </button>
+                            <button class="header__btn" id="new-game-btn">
+                                New Game
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- non bootstrap desktop nav -->
+                <nav class="header__nav header__nav--desktop">
                     <button class="header__btn" id="settings-btn">
                         Settings
                     </button>

@@ -206,14 +206,13 @@ button {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1rem, 2vw, 1.5rem); // MAKING FONT SIZE RESPONSIVE
+        font-size: clamp(1rem, 10vw, 2rem); // MAKING FONT SIZE RESPONSIVE
         padding: 1rem;
     }
 
     &__options {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
     }
 
     &__option {
@@ -230,13 +229,30 @@ button {
         justify-content: center;
         text-align: center;
     }
+
+    // &__timer {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
 }
 
+// DEVICE RESPONSIVENESS
+
+// NEED TO FIX LAYOUT IN OFFCANVAS
 @include devices.mobile {
     .header {
         &__container {
-            flex-direction: column;
+            flex-direction: column; // WIP
             gap: 1rem;
+        }
+        &__nav--desktop {
+            display: none;
+        }
+        .header__offcanvas-toggler {
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
         }
     }
 
@@ -249,4 +265,39 @@ button {
             min-height: 50px;
         }
     }
+}
+
+// NEED TO FIX LAYOUT IN OFFCANVAS
+@include devices.tablet {
+    .header {
+        &__nav--desktop {
+            display: none;
+        }
+        // .header__offcanvas-toggler {
+        //     display: block;
+        //     position: absolute;
+        //     right: 1rem;
+        //     top: 1rem;
+        // }
+    }
+}
+
+@include devices.desktop {
+    .header {
+        .header__offcanvas-toggler {
+            display: none;
+        }
+
+        .offcanvas {
+            display: none;
+        }
+    }
+}
+
+.navbar-toggler-icon {
+    filter: invert(1) brightness(3); // making the trigger icon lighter
+}
+
+.header__offcanvas-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
