@@ -323,6 +323,69 @@ const startGame = async () => {
     }
 };
 
+const renderAboutScreen = () => {
+    resetGame();
+    app.innerHTML = `
+        <div class="about-screen">
+            <h2>About Code Countdown</h2>
+            <p class="mb-4">
+                Code Countdown is a quiz game designed to help test and improve your coding knowledge.
+                Race against the clock while answering questions about different programming languages and concepts.
+            </p>
+
+            <h3 class="mb-3">Frequently Asked Questions</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Can I change how many questions I have per game?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, You can adjust the number of questions per game in the Settings menu.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Can I change the amount of time I have per question?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, You can adjust the time per question in the Settings menu.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            What programming languages are available?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently, the quizzes available are in HTML, CSS, JavaScript, TypeScript, and SQL.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="back-to-start" class="mt-4">Back to Start</button>
+        </div>
+    `;
+
+    document
+        .querySelector<HTMLButtonElement>('#back-to-start')
+        ?.addEventListener('click', () => {
+            renderStartScreen();
+        });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     renderStartScreen();
 
@@ -338,5 +401,11 @@ document.addEventListener('DOMContentLoaded', () => {
     settingsButton?.addEventListener('click', () => {
         resetGame();
         renderSettingsScreen();
+    });
+
+    const aboutButton = document.querySelector<HTMLButtonElement>('#about-btn');
+    aboutButton?.addEventListener('click', () => {
+        resetGame();
+        renderAboutScreen();
     });
 });

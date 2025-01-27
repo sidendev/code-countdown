@@ -83,3 +83,46 @@ button {
     transition: border-color 0.25s;
     margin: 0.25rem;
 }
+
+.about-screen {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+
+    h2,
+    h3 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .accordion {
+        margin-bottom: 2rem;
+    }
+
+    .accordion-button {
+        @include typography.fira-code-medium;
+        background-color: hsl(222.2, 84%, 4.9%);
+        color: hsl(210, 40%, 98%);
+
+        &:not(.collapsed) {
+            background-color: hsl(210, 6%, 13%);
+            color: hsl(210, 40%, 98%);
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: hsl(220, 5%, 13%);
+        }
+    }
+
+    .accordion-body {
+        @include typography.fira-code-light;
+        background-color: hsl(222.2, 84%, 4.9%);
+        color: hsl(210, 40%, 98%);
+    }
+
+    #back-to-start {
+        display: block;
+        margin: 0 auto;
+    }
+}
