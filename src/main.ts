@@ -66,12 +66,15 @@ const renderStartScreen = () => {
 
     app.innerHTML = `
         <div class="start-screen">
-            <div class="text-content">
+            <div>
 
                 <h2>Welcome to Code Countdown</h2>
 
                 <p>Choose a programming language and test your knowledge against the clock.</p>
-                <p>3, 2, 1, Lets Go!</>
+
+                <p>In settings you can change the timer length or the number of questions per game.</p>
+
+                <p>Ready? 3, 2, 1, Lets Go!</>
 
             </div>
             <div class="language-buttons">
@@ -413,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderStartScreen();
 
     const newGameButtons =
-        document.querySelectorAll<HTMLButtonElement>('#new-game-btn');
+        document.querySelectorAll<HTMLButtonElement>('#newGameBtn');
     newGameButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
             resetGame();
@@ -422,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const settingsButtons =
-        document.querySelectorAll<HTMLButtonElement>('#settings-btn');
+        document.querySelectorAll<HTMLButtonElement>('#settingsBtn');
     settingsButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
             resetGame();
@@ -431,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const aboutButtons =
-        document.querySelectorAll<HTMLButtonElement>('#about-btn');
+        document.querySelectorAll<HTMLButtonElement>('#aboutBtn');
     aboutButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
             resetGame();
