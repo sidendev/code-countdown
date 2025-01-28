@@ -224,27 +224,27 @@ const renderQuestion = (index: number) => {
 
     app.innerHTML = `
       <div class="question__container">
-          <h2 class="question__text">${escapeHTML(questionData.question)}</h2>
-          <ul class="question__options">
+          <div class="question__timer">Time Remaining: <span class="question__timer-count">${timeRemaining}</span></div>
+          <div class="question__text">${escapeHTML(questionData.question)}</div>
+          <div class="question__options">
               ${questionData.options
                   .map(
                       (option, index) =>
-                          `<li>
-                              <button class="question_option" data-index="${index}">
-                                  ${escapeHTML(option)}
-                              </button>
-                          </li>`
+                          `<button class="question__option" data-index="${index}">
+                              ${escapeHTML(option)}
+                           </button>`
                   )
                   .join('')}
-          </ul>
-          <div id="timer">Time Remaining: <span>${timeRemaining}</span> seconds</div>
+          </div>
       </div>
   `;
 
     const startTimer = () => {
         timerId = setInterval(() => {
             timeRemaining -= 1;
-            const timerDisplay = document.querySelector('#timer span');
+            const timerDisplay = document.querySelector(
+                '.question__timer-count'
+            );
             if (timerDisplay) {
                 timerDisplay.textContent = String(timeRemaining);
             }
@@ -267,7 +267,7 @@ const renderQuestion = (index: number) => {
     };
 
     document
-        .querySelectorAll<HTMLButtonElement>('.question_option')
+        .querySelectorAll<HTMLButtonElement>('.question__option')
         .forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 const target = e.target as HTMLButtonElement;
@@ -290,7 +290,7 @@ const checkAnswer = (
     questionIndex: number
 ) => {
     const buttons =
-        document.querySelectorAll<HTMLButtonElement>('.question_option');
+        document.querySelectorAll<HTMLButtonElement>('.question__option');
 
     if (selectedIndex === correctIndex) {
         correctAnswers++;
