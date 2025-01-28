@@ -450,7 +450,7 @@ body {
     border-radius: 4px;
     &.navbar-dark {
         .navbar-toggler-icon {
-            background-image: url('/navbar-toggler-icon.svg'); // ICON FIX AS BOOTSTRAP ICON NOT WORKING
+            background-image: url('/public/navbar-toggler-icon.svg'); // ICON FIX AS BOOTSTRAP ICON NOT WORKING
             background-size: contain;
             background-repeat: no-repeat;
         }

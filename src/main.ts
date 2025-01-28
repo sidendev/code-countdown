@@ -42,7 +42,7 @@ const pickRandomQuestions = (arr: Question[], count: number): Question[] => {
 
 const loadQuestions = async (language: string) => {
     try {
-        const response = await fetch(`../${language}.json`);
+        const response = await fetch(`/${language}.json`);
         const data = await response.json();
         questions = data[language] as Question[];
         questions = pickRandomQuestions(questions, questionsPerGame);
