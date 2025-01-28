@@ -195,7 +195,7 @@ const renderSettingsScreen = () => {
                 </select>
             </div>
 
-            <button id="save-settings-btn" class="btn btn-primary">Save Settings</button>
+            <button id="save-settings-btn">Save Settings</button>
         </div>
     `;
 
