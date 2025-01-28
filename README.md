@@ -1,22 +1,23 @@
-# Code Countdown Quiz
+# Code Countdown
 
-**Code Countdown**, an interactive game to help you learn your coding language. built using **Vite**, **TypeScript**, **SCSS**, and **HTML**. The project is deployed on GitHub Pages and can be accessed via the live link below. 
+**Code Countdown**, an interactive game to help you learn your coding language. built using **Vite**, **TypeScript**, **SCSS**, **Bootstrap** and **HTML**. The project is deployed on GitHub Pages and can be accessed via the live link below. 
 
 ## Overview
 
 - **Game Description**  
-  Code Countdown is designed to test your coding logic and problem-solving skills. Players race against the clock to complete the questions.
+  Code Countdown is designed to test your coding logic and problem-solving skills. Players race against the clock to complete the questions in time.
 
 - **Tech Stack**  
   - **Vite**: Fast build tool for web apps.
   - **TypeScript**: For type safety and clean, maintainable code.
   - **SCSS**: Modular and reusable styles for better maintainability.
+  - **Bootstrap**: Framework for building responsive websites and apps.
   - **HTML**: Semantic markup for accessibility and structure.
 
 - **Key Features**  
   - Responsive design optimised for desktop, tablet, and mobile.
-  - Library of questions and answers in various code languages.
-  - Deployed to GitHub Pages for easy access.
+  - Library of questions and answers in various coding languages.
+  - Deployed to GitHub Pages.
   - Settings section for changing question time and amount of questions per game.
   - Includes Bootstrap components for settings, mobile navigation, and FAQ section.
 
@@ -60,6 +61,29 @@ Follow the steps below to clone and run the project locally:
   - **Navbar Offcanvas**: Used for navigation on mobile and tablet views.
   - **Accordion**: Implemented in the FAQ section on the About screen. 
 
+## Game Questions Credits
+
+Most of the questions and answers have been sourced or inspired by these great resources. Please check them out:
+
+GeeksforGeeks CSS Interview Questions:  
+[**https://www.geeksforgeeks.org/css-interview-questions-and-answers/**](https://www.geeksforgeeks.org/css-interview-questions-and-answers/)
+
+LambdaTest CSS Interview Questions:  
+[**https://www.lambdatest.com/learning-hub/css-interview-questions**](https://www.lambdatest.com/learning-hub/css-interview-questions)
+
+Turing JavaScript Interview Questions:  
+[**https://www.turing.com/interview-questions/javascript**](https://www.turing.com/interview-questions/javascript)
+
+Simplilearn TypesScript Interview Questions:  
+[**https://www.simplilearn.com/tutorials/typescript-tutorial/typescript-interview-questions**](https://www.simplilearn.com/tutorials/typescript-tutorial/typescript-interview-questions)
+
+GeeksforGeeks SQL Interview Questions:  
+[**https://www.geeksforgeeks.org/sql-interview-questions/**](https://www.geeksforgeeks.org/sql-interview-questions/)
+
+LambdaTest HTML Interview Questions:  
+[**https://www.lambdatest.com/learning-hub/html-interview-questions**](https://www.lambdatest.com/learning-hub/html-interview-questions)
+
+
 ## Future Improvements
 
 If more time were available, the following improvements would be made:
@@ -68,14 +92,14 @@ If more time were available, the following improvements would be made:
    - Separate the functions into individual files for better modularity. Currently, the main functionality is all in `main.ts`.
    
 2. **Naming Conventions**  
-   - Refactor class and ID names to follow best practices.
+   - Refactor some class and ID names to follow best practices.
    
 3. **SCSS Refinements**  
    - Make styles more modular and reusable using more mixins and variables.
    - Reduce the amount of code in `styles.scss`.
 
 4. **Styling Enhancements**  
-   - Spend additional time refining the overall look and feel of the game.
+   - Spend additional time refining the overall look and feel of the game, adding some animations.
    - Implement what I had planned for the styling in the planning README.
 
 5. **Additional Features**  
@@ -88,4 +112,4 @@ If more time were available, the following improvements would be made:
 3. Improve SCSS for better reusability and maintainability.
 4. Add more styling and features as outlined in the planning README.
 
-Thank you for checking out Code Countdown.
+Thank you for checking out Code Countdown!

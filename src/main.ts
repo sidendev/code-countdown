@@ -1,10 +1,4 @@
 import './styles/styles.scss';
-import htmlQuestions from './assets/html.json' assert { type: 'json' };
-import cssQuestions from './assets/css.json' assert { type: 'json' };
-import javascriptQuestions from './assets/javascript.json' assert { type: 'json' };
-import typescriptQuestions from './assets/typescript.json' assert { type: 'json' };
-import sqlQuestions from './assets/sql.json' assert { type: 'json' };
-import typescriptIcon from './assets/typescript-icon.svg';
 
 interface Question {
     id: number;
@@ -46,31 +40,14 @@ const pickRandomQuestions = (arr: Question[], count: number): Question[] => {
     return selectedQuestions;
 };
 
-const loadQuestions = (language: string): void => {
+const loadQuestions = async (language: string) => {
     try {
-        switch (language) {
-            case 'html':
-                questions = htmlQuestions.html;
-                break;
-            case 'css':
-                questions = cssQuestions.css;
-                break;
-            case 'javascript':
-                questions = javascriptQuestions.javascript;
-                break;
-            case 'typescript':
-                questions = typescriptQuestions.typescript;
-                break;
-            case 'sql':
-                questions = sqlQuestions.sql;
-                break;
-            default:
-                throw new Error('Invalid language selected');
-        }
-
+        const response = await fetch(`./${language}.json`);
+        const data = await response.json();
+        questions = data[language] as Question[];
         questions = pickRandomQuestions(questions, questionsPerGame);
     } catch (error) {
-        console.log('Error loading questions:', error);
+        console.log('Error: Failed to load questions:', error);
     }
 };
 
@@ -114,7 +91,7 @@ const renderStartScreen = () => {
                     <span>JavaScript</span>
                 </button>
                 <button id="ts-btn">
-                    <img src="${typescriptIcon}" alt="TypeScript Icon" width="24" height="24" />
+                    <img src="./typescript-icon.svg" alt="TypeScript Icon" width="24" height="24" />
                     <span>TypeScript</span>
                 </button>
                 <button id="sql-btn">
