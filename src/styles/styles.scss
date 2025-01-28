@@ -6,18 +6,8 @@
     line-height: 1.5;
     font-weight: 400;
     font-size: 16px;
-
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-li {
-    list-style: none;
 }
 
 body {
@@ -30,24 +20,6 @@ body {
     @include typography.inter-regular;
 }
 
-.correct {
-    @include palette.accent-green-background;
-    color: #fff;
-}
-
-.incorrect {
-    @include palette.accent-red-background;
-    color: #fff;
-}
-
-h1 {
-    @include typography.inter-extrabold;
-}
-
-p {
-    @include typography.fira-code-light;
-}
-
 #app {
     max-width: 1280px;
     margin: 0 auto;
@@ -58,27 +30,94 @@ p {
     @include typography.fira-code-regular;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
+// ==== HEADER ====
+
+.header {
+    width: 100%;
+    padding: 1rem;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    @include palette.background;
+    @include palette.border;
+
+    &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        @include typography.inter-extrabold;
+        margin: 0;
+        @include palette.foreground;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__btn {
+        @include typography.fira-code-medium;
+        @include palette.background;
+        @include palette.border;
+
+        &:hover {
+            @include palette.primary-background;
+        }
+    }
 }
 
-.card {
-    padding: 2em;
+// ==== MAIN APP SECTION ====
+
+.main {
+    flex: 1;
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    min-height: calc(100vh - 125px);
+
+    &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0.5rem;
+        height: 100%;
+        min-height: calc(100vh - 125px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    color: #fff;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    margin: 0.25rem;
+// ==== FOOTER ====
+
+.footer {
+    width: 100%;
+    padding: 0.5rem;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1020;
+    @include palette.background;
+    @include palette.border;
+
+    &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__text {
+        @include typography.inter-regular;
+        @include palette.foreground;
+        margin: 0;
+    }
 }
 
 // ==== ABOUT SCREEN ====
@@ -164,93 +203,69 @@ button {
     }
 }
 
-// ==== HEADER ====
+// ==== START SCREEN ====
 
-.header {
+.start-screen {
     width: 100%;
-    padding: 1rem;
-    height: 75px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1030;
-    @include palette.background;
-    @include palette.border;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 
-    &__container {
-        max-width: 1280px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__logo {
+    h2 {
         @include typography.inter-extrabold;
-        margin: 0;
-        @include palette.foreground;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
-    &__nav {
-        display: flex;
-        gap: 1rem;
-    }
-
-    &__btn {
-        @include typography.fira-code-medium;
-        @include palette.background;
-        @include palette.border;
-
-        &:hover {
-            @include palette.primary-background;
-        }
-    }
-}
-
-// ==== MAIN APP SECTION ====
-
-.main {
-    flex: 1;
-    width: 100%;
-    margin-top: 75px;
-    margin-bottom: 50px;
-    min-height: calc(100vh - 125px); // TAKING OUT 125px FOR HEADER AND FOOTER
-
-    &__container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0.5rem;
-        height: 100%;
-        min-height: calc(100vh - 125px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-// ==== FOOTER ====
-
-.footer {
-    width: 100%;
-    padding: 0.5rem;
-    height: 40px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1020;
-    @include palette.background;
-    @include palette.border;
-
-    &__container {
-        max-width: 1280px;
-        margin: 0 auto;
+    p {
+        @include typography.inter-regular;
+        font-size: 1.2rem;
+        color: hsl(215, 20.2%, 65.1%);
+        max-width: 600px;
         text-align: center;
     }
 
-    &__text {
-        @include typography.inter-regular;
-        @include palette.foreground;
-        margin: 0;
+    .language-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 600px;
+
+        // STYLING FOR BUTTON TRANSITION AND TRANSFORM FROM CSS TRICKS AND W3 SCHOOLS
+        button {
+            @include typography.inter-semibold;
+            min-width: 160px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background-color: hsl(222.2, 84%, 4.9%);
+            border: 2px solid hsl(217.2, 91.2%, 59.8%);
+            color: hsl(210, 40%, 98%);
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            i,
+            svg {
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                background-color: hsl(217.2, 91.2%, 59.8%);
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
     }
 }
 
@@ -329,6 +344,158 @@ button {
     }
 }
 
+// ==== SETTINGS SCREEN ====
+
+.settings-screen {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+
+    h2 {
+        @include typography.fira-code-bold;
+        margin-bottom: 2rem;
+    }
+
+    .settings-group {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        label {
+            @include typography.inter-bold;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .form-select {
+        width: 100%;
+        background-color: hsl(222.2, 84%, 4.9%);
+        color: hsl(210, 40%, 98%);
+        border-color: hsl(217.2, 91.2%, 59.8%);
+
+        &:focus {
+            border-color: hsl(217.2, 91.2%, 59.8%);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    }
+
+    #save-settings-btn {
+        display: block;
+        margin: 2rem auto 0;
+        min-width: 100px;
+        @include typography.inter-semibold;
+        @include palette.background;
+        @include palette.border;
+        @include palette.foreground;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+
+        &:hover {
+            @include palette.primary-background;
+        }
+    }
+}
+
+// ==== END SCREEN ====
+.end-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 125px);
+    padding: 2rem;
+    border: 2px solid hsl(217.2, 91.2%, 59.8%);
+    border-radius: 8px;
+    @include palette.background;
+    @include palette.foreground;
+
+    h2 {
+        @include typography.inter-extrabold;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        @include typography.inter-regular;
+        font-size: 1.2rem;
+        color: hsl(215, 20.2%, 65.1%);
+        max-width: 600px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        @include typography.inter-semibold;
+        min-width: 160px;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        background-color: hsl(222.2, 84%, 4.9%);
+        border: 2px solid hsl(217.2, 91.2%, 59.8%);
+        color: hsl(210, 40%, 98%);
+        border-radius: 8px;
+
+        &:hover {
+            background-color: hsl(217.2, 91.2%, 59.8%);
+        }
+    }
+}
+
+// ==== BOOTSTRAP OFFCANVAS FOR MOBILE AND TABLET
+
+.header__offcanvas-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    &.navbar-dark {
+        .navbar-toggler-icon {
+            background-image: url('/navbar-toggler-icon.svg'); // ICON FIX AS BOOTSTRAP ICON NOT WORKING
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.offcanvas {
+    z-index: 1050;
+}
+
+// ==== GENERAL BUTTON ====
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    margin: 0.25rem;
+}
+
+// ==== GENERAL STYLES ====
+
+.correct {
+    @include palette.accent-green-background;
+    color: #fff;
+}
+
+.incorrect {
+    @include palette.accent-red-background;
+    color: #fff;
+}
+
+h1 {
+    @include typography.inter-extrabold;
+}
+
+p {
+    @include typography.fira-code-light;
+}
+
 // DEVICE RESPONSIVENESS
 
 @include devices.mobile {
@@ -385,196 +552,6 @@ button {
     .question {
         &__timer {
             padding-left: 6rem;
-        }
-    }
-}
-
-// ==== BOOTSTRAP OFFCANVAS FOR MOBILE AND TABLET
-
-// TOGGLE ICON FIX WITH SVG - BOOTSTRAP METHOD NOT WORKING
-.header__offcanvas-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
-    &.navbar-dark {
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); // TEMP FIX
-        }
-    }
-}
-
-.offcanvas {
-    z-index: 1050;
-}
-
-// ==== SETTINGS SCREEN ====
-
-.settings-screen {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 2rem;
-    // align-items: center;
-
-    h2 {
-        @include typography.fira-code-bold;
-        margin-bottom: 2rem;
-    }
-
-    .settings-group {
-        width: 100%;
-        margin-bottom: 2rem;
-        // max-width: 325px;
-        // display: flex;
-        // flex-direction: column;
-        // gap: 1rem;
-
-        label {
-            @include typography.inter-bold;
-            font-size: 1.25rem;
-            margin-top: 2rem;
-        }
-    }
-
-    .form-select {
-        width: 100%;
-        // align-self: center;
-        background-color: hsl(222.2, 84%, 4.9%);
-        color: hsl(210, 40%, 98%);
-        border-color: hsl(217.2, 91.2%, 59.8%);
-
-        &:focus {
-            border-color: hsl(217.2, 91.2%, 59.8%);
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-        }
-    }
-
-    #save-settings-btn {
-        display: block;
-        margin: 2rem auto 0;
-        min-width: 100px;
-        @include typography.inter-semibold;
-        @include palette.background;
-        @include palette.border;
-        @include palette.foreground;
-        border-radius: 8px;
-        padding: 0.75rem 1.5rem;
-
-        &:hover {
-            @include palette.primary-background;
-        }
-    }
-}
-
-// ==== START SCREEN ====
-
-.start-screen {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-
-    h2 {
-        @include typography.inter-extrabold;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        @include typography.inter-regular;
-        font-size: 1.2rem;
-        color: hsl(215, 20.2%, 65.1%);
-        max-width: 600px;
-        text-align: center;
-    }
-
-    .language-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        width: 100%;
-        max-width: 600px;
-
-        // STYLING FOR BUTTON TRANSITION AND TRANSFORM FROM CSS TRICKS AND W3 SCHOOLS
-        button {
-            @include typography.inter-semibold;
-            min-width: 160px;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            background-color: hsl(222.2, 84%, 4.9%);
-            border: 2px solid hsl(217.2, 91.2%, 59.8%);
-            color: hsl(210, 40%, 98%);
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-
-            i,
-            svg {
-                font-size: 1.2rem;
-            }
-
-            &:hover {
-                background-color: hsl(217.2, 91.2%, 59.8%);
-                transform: translateY(-2px);
-            }
-
-            &:active {
-                transform: translateY(0);
-            }
-        }
-    }
-}
-
-// ==== END SCREEN ====
-.end-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: calc(100vh - 125px);
-    padding: 2rem;
-    border: 2px solid hsl(217.2, 91.2%, 59.8%);
-    border-radius: 8px;
-    @include palette.background;
-    @include palette.foreground;
-
-    h2 {
-        @include typography.inter-extrabold;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        @include typography.inter-regular;
-        font-size: 1.2rem;
-        color: hsl(215, 20.2%, 65.1%);
-        max-width: 600px;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    button {
-        @include typography.inter-semibold;
-        min-width: 160px;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        background-color: hsl(222.2, 84%, 4.9%);
-        border: 2px solid hsl(217.2, 91.2%, 59.8%);
-        color: hsl(210, 40%, 98%);
-        border-radius: 8px;
-
-        &:hover {
-            background-color: hsl(217.2, 91.2%, 59.8%);
         }
     }
 }
