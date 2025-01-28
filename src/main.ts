@@ -356,8 +356,9 @@ const renderAboutScreen = () => {
                 Race against the clock while answering questions about different programming languages and concepts.
             </p>
 
-            <h3 class="mb-3">Frequently Asked Questions</h3>
+            <h3 class="mb-3">Frequently Asked Questions:</h3>
             <div class="accordion" id="faqAccordion">
+
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
@@ -396,6 +397,20 @@ const renderAboutScreen = () => {
                         </div>
                     </div>
                 </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What happens when I run out of time on a question?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            That question will be marked as being incorrect.
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <button id="back-to-start" class="mt-4">Back to Start</button>
