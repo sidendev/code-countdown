@@ -345,7 +345,7 @@ const startGame = async () => {
     }
 };
 
-// using bootstrap classes for styling on this screen
+// Using Bootstrap classes for styling on this screen
 const renderAboutScreen = () => {
     resetGame();
     app.innerHTML = `

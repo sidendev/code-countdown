@@ -234,6 +234,8 @@ button {
     }
 }
 
+// ==== QUESTION SCREEN ====
+
 .question {
     &__container {
         width: 100%;
@@ -290,9 +292,10 @@ button {
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        padding-left: 2.5rem;
         @include typography.inter-bold;
         @include palette.background;
         @include palette.foreground;
@@ -342,6 +345,11 @@ button {
             display: none;
         }
     }
+    .question {
+        &__timer {
+            padding-left: 5rem;
+        }
+    }
 }
 
 @include devices.desktop {
@@ -352,6 +360,11 @@ button {
 
         .offcanvas {
             display: none;
+        }
+    }
+    .question {
+        &__timer {
+            padding-left: 6rem;
         }
     }
 }
