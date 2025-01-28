@@ -1,30 +1,5 @@
 import './styles/styles.scss';
-// import './data/html.json';
 
-// import data first to be then put into an array and then shuffled? TBD
-
-// import viteLogo from '/vite.svg';
-// import { setupCounter } from './counter.ts'
-
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//     <a href="https://vite.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p>
-//       Test Game
-//     </p>
-//   </div>
-// `;
-
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-
-// Question interface to stop getting TS error warnings
 interface Question {
     id: number;
     question: string;
@@ -95,7 +70,8 @@ const renderStartScreen = () => {
         <div class="start-screen">
             <div class="text-content">
                 <h2>Welcome to Code Countdown</h2>
-                <p>Choose a programming language and test your knowledge against the clock. Ready to begin?</p>
+                <p>Choose a programming language and test your knowledge against the clock.</p>
+                <p>3, 2, 1, Lets Go!</>
             </div>
             <div class="language-buttons">
                 <button id="html-btn">
@@ -166,7 +142,7 @@ const renderSettingsScreen = () => {
             <h2>Settings</h2>
             
             <div class="settings-group">
-                <label for="time-select" class="form-label">Question Countdown Timer</label>
+                <label for="time-select" class="form-label">Question Countdown Timer:</label>
                 <select class="form-select" id="time-select" aria-label="Select question time">
                     <option value="10" ${
                         questionTime === 10 ? 'selected' : ''
@@ -181,7 +157,7 @@ const renderSettingsScreen = () => {
             </div>
             
             <div class="settings-group">
-                <label for="count-select" class="form-label">Number of Questions Per Game</label>
+                <label for="count-select" class="form-label">Number of Questions Per Game:</label>
                 <select class="form-select" id="count-select" aria-label="Select number of questions">
                     <option value="10" ${
                         questionsPerGame === 10 ? 'selected' : ''

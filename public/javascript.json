@@ -13,8 +13,13 @@
         },
         {
             "id": 2,
-            "question": "Which operator is used to assign a value to a variable?",
-            "options": ["=", "==", "===", "=>"],
+            "question": "How do you create an array in JavaScript?",
+            "options": [
+                "let arr = [1, 2, 3];",
+                "let arr = {1, 2, 3};",
+                "let arr = (1, 2, 3);",
+                "let arr = '1, 2, 3';"
+            ],
             "correctAnswer": 0
         },
         {
@@ -97,8 +102,13 @@
         },
         {
             "id": 11,
-            "question": "Which function of the Array object removes the last element from an array and returns that element?",
-            "options": ["pop()", "push()", "join()", "map()"],
+            "question": "What does the Object.values() method do in JavaScript?",
+            "options": [
+                "Returns an array of the object's values",
+                "Returns an array of the object's keys",
+                "Returns an array of key-value pairs",
+                "Deletes all values in an object"
+            ],
             "correctAnswer": 0
         },
         {
@@ -168,14 +178,19 @@
         },
         {
             "id": 22,
-            "question": "How do you check if two values are equal in both value and type in JavaScript?",
-            "options": ["==", "===", "=", "!"],
-            "correctAnswer": 1
+            "question": "What is the correct way to write a function in JavaScript?",
+            "options": [
+                "function myFunction() {}",
+                "def myFunction() {}",
+                "func myFunction() {}",
+                "function: myFunction() {}"
+            ],
+            "correctAnswer": 0
         },
         {
             "id": 23,
-            "question": "What will the following code output: console.log(0.1 + 0.2 === 0.3)?",
-            "options": ["true", "false", "undefined", "NaN"],
+            "question": "Which method is used to remove the last element of an array?",
+            "options": ["push()", "pop()", "shift()", "slice()"],
             "correctAnswer": 1
         },
         {

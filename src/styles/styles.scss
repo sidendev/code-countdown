@@ -413,10 +413,10 @@ button {
     width: 100%;
     margin: 0 auto;
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 2rem;
+    // align-items: center;
 
     h2 {
         @include typography.fira-code-bold;
@@ -425,18 +425,22 @@ button {
 
     .settings-group {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        margin-bottom: 2rem;
+        // max-width: 325px;
+        // display: flex;
+        // flex-direction: column;
+        // gap: 1rem;
 
         label {
             @include typography.inter-bold;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-top: 2rem;
         }
     }
 
     .form-select {
+        width: 100%;
+        // align-self: center;
         background-color: hsl(222.2, 84%, 4.9%);
         color: hsl(210, 40%, 98%);
         border-color: hsl(217.2, 91.2%, 59.8%);
