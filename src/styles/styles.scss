@@ -54,6 +54,7 @@ body {
     &__logo {
         @include typography.inter-extrabold;
         margin: 0;
+        cursor: pointer;
         @include palette.foreground;
     }
 

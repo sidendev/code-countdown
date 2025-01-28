@@ -14,18 +14,17 @@ if (!app) {
 }
 
 let questions: Question[] = [];
-let timerId: number | null = null;
+let timerId: ReturnType<typeof setInterval> | null = null;
 let correctAnswers: number = 0;
 let incorrectAnswers: number = 0;
-let questionTime: number = 10; // default time for questions
-let questionsPerGame: number = 10; // default number of questions per game
+let questionTime: number = 10; // Default time for questions
+let questionsPerGame: number = 10; // Default number of questions per game
 let selectedLanguage: string = '';
 
-// function to escape HTML in questions to ensure displayed as a string in dom
+// Function to escape HTML in answers to ensure displayed as a string, some answers are HTML tags
 const escapeHTML = (str: string): string =>
     str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// WIP
 const pickRandomQuestions = (arr: Question[], count: number): Question[] => {
     const selectedQuestions: Question[] = [];
     const usedQuestions: number[] = [];
@@ -59,8 +58,7 @@ const resetGame = () => {
     }
 };
 
-// sort class start-screen styling
-// NEED TO FIX THIS AND FIND SOLUTION FOR TYPESCRIPT ICON
+// Using SVG file for typescript icon as none on fontawesome
 const renderStartScreen = () => {
     resetGame();
     correctAnswers = 0;
@@ -69,9 +67,12 @@ const renderStartScreen = () => {
     app.innerHTML = `
         <div class="start-screen">
             <div class="text-content">
+
                 <h2>Welcome to Code Countdown</h2>
+
                 <p>Choose a programming language and test your knowledge against the clock.</p>
                 <p>3, 2, 1, Lets Go!</>
+
             </div>
             <div class="language-buttons">
                 <button id="html-btn">
@@ -87,9 +88,7 @@ const renderStartScreen = () => {
                     <span>JavaScript</span>
                 </button>
                 <button id="ts-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3,3v18h18V3H3z M13.666,12.451h-2.118V19H9.841v-6.549H7.767V11h5.899V12.451z M13.998,18.626v-1.751 c0,0,0.956,0.721,2.104,0.721c1.148,0,1.103-0.75,1.103-0.853c0-1.089-3.251-1.089-3.251-3.501c0-3.281,4.737-1.986,4.737-1.986 l-0.059,1.559c0,0-0.794-0.53-1.692-0.53c-0.897,0-1.221,0.427-1.221,0.883c0,1.177,3.281,1.059,3.281,3.428 C19,20.244,13.998,18.626,13.998,18.626z"/>
-                    </svg>
+                    <img src="/typescript-icon.svg" alt="TypeScript Icon" width="24" height="24" />
                     <span>TypeScript</span>
                 </button>
                 <button id="sql-btn">
@@ -139,6 +138,7 @@ const renderStartScreen = () => {
 const renderSettingsScreen = () => {
     app.innerHTML = `
         <div class="settings-screen">
+
             <h2>Settings</h2>
             
             <div class="settings-group">
@@ -190,7 +190,7 @@ const renderSettingsScreen = () => {
             questionsPerGame = parseInt(countSelect.value);
         }
 
-        renderStartScreen(); // maybe change this to not auto go to start WIP
+        renderStartScreen();
     });
 };
 
@@ -201,7 +201,9 @@ const renderQuestion = (index: number) => {
     app.innerHTML = `
       <div class="question__container">
           <div class="question__timer">Time Remaining: <span class="question__timer-count">${timeRemaining}</span></div>
+
           <div class="question__text">${escapeHTML(questionData.question)}</div>
+
           <div class="question__options">
               ${questionData.options
                   .map(
@@ -227,8 +229,12 @@ const renderQuestion = (index: number) => {
 
             if (timeRemaining <= 0) {
                 incorrectAnswers++;
-                clearInterval(timerId!); // NEED TO FIX THIS WIP
-                timerId = null;
+
+                if (timerId !== null) {
+                    clearInterval(timerId);
+                    timerId = null;
+                }
+
                 handleTimeout(index);
             }
         }, 1000);
@@ -292,7 +298,6 @@ const checkAnswer = (
     }, 1250);
 };
 
-// sort class end-screen styling
 const renderEndScreen = () => {
     resetGame();
     const totalQuestions = correctAnswers + incorrectAnswers;
@@ -317,22 +322,25 @@ const startGame = async () => {
     if (questions.length > 0) {
         renderQuestion(0);
     } else {
-        console.error('No questions available');
+        console.log('No questions available');
     }
 };
 
-// Using Bootstrap classes for styling on this screen
+// Using Bootstrap classes for styling and accordion on the About screen
 const renderAboutScreen = () => {
     resetGame();
     app.innerHTML = `
         <div class="about-screen">
+
             <h2>About Code Countdown</h2>
+
             <p class="mb-4">
                 Code Countdown is a quiz game designed to help test and improve your coding knowledge.
                 Race against the clock while answering questions about different programming languages and concepts.
             </p>
 
             <h3 class="mb-3">Frequently Asked Questions:</h3>
+
             <div class="accordion" id="faqAccordion">
 
                 <div class="accordion-item">
@@ -390,6 +398,7 @@ const renderAboutScreen = () => {
             </div>
 
             <button id="back-to-start" class="mt-4">Back to Start</button>
+
         </div>
     `;
 
